@@ -28,19 +28,19 @@ jobs:
             - run:
                command: |
                 echo "$DOCKER_PASS" | docker login --username $DOCKER_LOGIN --password-stdin
-                sudo docker build ./db -t node-react-db
-                sudo docker push node-react-db
+                sudo docker build ./db -t mpast99/node-react-db
+                sudo docker push mpast99/node-react-db
               
             - run:
                command: |
                 echo $DOCKER_PASS" | docker login --username $DOCKER_LOGIN --password-stdin
-                sudo docker build ./server -t node-svr
-                sudo docker push mpast/node-svr
+                sudo docker build ./server -t mpast99/node-svr
+                sudo docker push mpast99/node-svr
               
             - run:
                command: |
                 echo $DOCKER_PASS" | docker login ---username $DOCKER_LOGIN --password-stdin
-                sudo docker build ./client -t cra-client
+                sudo docker build ./client -t mpast99/cra-client
                 sudo docker push mpast99/cra-client
   
   

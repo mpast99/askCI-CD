@@ -22,6 +22,7 @@ jobs:
           command: npm test
           working_directory: ./client
   docker:
+        machine: true
         steps:
             - checkout
             - run:

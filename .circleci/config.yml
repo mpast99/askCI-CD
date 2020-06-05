@@ -23,24 +23,24 @@ jobs:
           working_directory: ./client
   docker:
         steps:
-       - checkout
-       - run:
-           command: |
-              echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-              sudo docker build ./db -t node-react-db
-              sudo docker push node-react-db
+            - checkout
+            - run:
+               command: |
+                echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+                sudo docker build ./db -t node-react-db
+                sudo docker push node-react-db
               
-       - run:
-           command: |
-              echo $DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-              sudo docker build ./server -t node-svr
-              sudo docker push mpast/node-svr
+            - run:
+               command: |
+                echo $DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+                sudo docker build ./server -t node-svr
+                sudo docker push mpast/node-svr
               
-       - run:
-           command: |
-              echo $DOCKER_PASS" | docker login ---username $DOCKER_USER --password-stdin
-              sudo docker build ./client -t cra-client
-              sudo docker push mpast99/cra-client
+            - run:
+               command: |
+                echo $DOCKER_PASS" | docker login ---username $DOCKER_USER --password-stdin
+                sudo docker build ./client -t cra-client
+                sudo docker push mpast99/cra-client
   
   
 workflows:
@@ -48,3 +48,4 @@ workflows:
     jobs:
     - build-and-test
     - docker
+    

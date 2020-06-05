@@ -5,21 +5,22 @@ jobs:
   build-and-test:
     executor: node/default
     steps:
+      steps:
       - checkout
       - node/install-packages:
-         app-dir: ./server
+          app-dir: ./server
       - run:
-         command: npm install
-          working_directory:./server
+          command: npm install
+          working_directory: ./server
       - run:
-         command: npm test
-          working_directory:./server
+          command: npm test
+          working_directory: ./server
       - run:
-         command: npm install
-          working_directory:./client
+          command: npm install
+          working_directory: ./client
       - run:
-         command: npm test
-          working_directory:./client
+          command: npm test
+          working_directory: ./client
 
 workflows:
   build-and-test:

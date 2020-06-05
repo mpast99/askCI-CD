@@ -33,16 +33,15 @@ jobs:
               
             - run:
                command: |
-                echo $DOCKER_PASS" | docker login --username $DOCKER_LOGIN --password-stdin
+                echo "$DOCKER_PASS" | docker login --username $DOCKER_LOGIN --password-stdin
                 sudo docker build ./server -t mpast99/node-svr
                 sudo docker push mpast99/node-svr
-              
+            
             - run:
                command: |
-                echo $DOCKER_PASS" | docker login ---username $DOCKER_LOGIN --password-stdin
+                echo "$DOCKER_PASS" | docker login --username $DOCKER_LOGIN --password-stdin
                 sudo docker build ./client -t mpast99/cra-client
                 sudo docker push mpast99/cra-client
-  
   
 workflows:
   build-and-test:

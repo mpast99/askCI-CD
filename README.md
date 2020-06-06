@@ -2,7 +2,7 @@
 **Cel ćwiczenia:**
 
 ## Uruchomienie aplikacji
-Aplikacja składa się z trzech części:
+Aplikacja składa się z trzech części
 1. Klient, napisany z wykorzystaniem [React.js](https://reactjs.org/). Do uruchomienia jej bez dockera wystarczy uruchomić z katalogu [./client](./client) polecenie `npm start`. Wymaga zainstalowanego nodejs oraz npm. W dockerze uruchamiany jest jako static content w [nginx](https://www.nginx.com/).
 2. Serwer to API w nodejs. Do uruchomienia lokalnie najprościej skorzystać z polecenia `npm run dev`. W przypadku uruchomienia w kontenerze instalowane są _wyłącznie_ zależności produkcyjne (deweloperskie są pomijane).
 3. Baza danych była testowana pod mysql-8.0.20, jednak powinna bez problemu działać również pod mariadb. Lokalnie należy zaimportować dane ze skryptu [db.sql](db/db.sql). Dla ułatwienia uruchomienia w kontenerze, przygotowany został prosty Dockerfile, importujący dane automatycznie.
